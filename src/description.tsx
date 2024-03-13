@@ -1,7 +1,7 @@
 import "./description.css"
 import minus from "./assets/icon-minus.svg"
 import plus from "./assets/icon-plus.svg"
-import cart from "./assets/icon-cart.svg"
+import cart from "./assets/shopping-cart.png"
 const Description=()=>{
     return(
         <>
