@@ -1,0 +1,44 @@
+#links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family:  'Kumbh Sans', sans-serif;;
+    padding: 1%;
+    font-size: 16px;
+    flex: 1;
+}
+#links  a{
+    text-decoration: none; 
+    color: rgb(97, 96, 96);
+    padding-right: 10%;
+}
+#links a:hover{
+    color:black;
+    
+}
+#links img{
+    padding-right: 15%;
+}
+
+#nav-headers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(49, 49, 49, 0.133);
+    width: 90%;
+    padding: 0;
+}
+#profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#profile #avatar{
+    width: 35%;
+    height: 40%;
+}
+@media only screen  and (max-width: 426px){
+    #links{
+        display: none;
+    }
+}
