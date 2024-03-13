@@ -1,15 +1,12 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
 body{
     background:#f2f4f5;
-    padding: 1%;
-    margin-left: 2%;
-   width: 1400px;
-   
-
-}
+   width: 90%;
+   display: flex;
+   margin: 1% 5%;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;}
 #product{
     display: flex;
 }
@@ -18,8 +15,8 @@ body{
         flex-direction: column;
     }
     body{
-        padding: auto;
-        width:370px
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
-
 }

@@ -1,44 +1,89 @@
-#links{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family:  'Kumbh Sans', sans-serif;;
-    padding: 1%;
-    font-size: 16px;
-    flex: 1;
-}
-#links  a{
-    text-decoration: none; 
-    color: rgb(97, 96, 96);
-    padding-right: 10%;
-}
-#links a:hover{
-    color:black;
-    
-}
-#links img{
-    padding-right: 15%;
-}
-
 #nav-headers{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(49, 49, 49, 0.133);
-    width: 90%;
-    padding: 0;
+    padding-bottom: 2%;
+    width: 100%;    
+}
+#links{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3%;
+    font-family:  'Kumbh Sans', sans-serif;
+    font-size: 16px;
+    flex: 75%;
+}
+.logo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex:15%;
+}
+#links  a{
+    text-decoration: none; 
+    color: rgb(97, 96, 96);
+}
+#links a:hover{
+    color:black;
+    border-bottom: 2px solid #da6201;
+    
+}
+#links img{
+    padding-right: 15%;
 }
 #profile{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex:10%;
+   
 }
-#profile #avatar{
+#profile .cart{
+    width: 20%;
+    height: 20%;
+}
+#profile .avatar{
     width: 35%;
     height: 40%;
+    border: 2px solid #da630100;
+}
+#profile .avatar:hover{
+    border: 2px solid #da6201;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+}
+.burger-menu{
+    display: none;
+    padding: 5%;
+    width: 5%;
+}
+.burger-menu img{
+    width: 80%;
 }
 @media only screen  and (max-width: 426px){
     #links{
         display: none;
+    }
+    .burger-menu{
+        display: flex;
+    }
+    .logo{
+        padding: 2%;
+    }
+    #profile{
+        flex: 5%;
+    }
+    #profile .cart{
+        width: 12%;
+        height: 12%;
+    }
+    #profile .avatar{
+        width: 22%;
+        height: 28%;
+        border: 2px solid #da630100;
     }
 }
