@@ -15,6 +15,35 @@
     font-size: 16px;
     flex: 75%;
 }
+#side-links{
+    position: fixed;
+    height: 100vh;
+    width: 200px;
+    z-index: 999;
+    background: #fff;
+    backdrop-filter: -10px 0 10px white;
+    display: flex;
+    font-family:  'Kumbh Sans', sans-serif;
+    font-weight: 900;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+    padding: 2% 2%;
+}
+#side-links a{
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+font-size: clamp(13px , 1vw, 40px);
+font-style: normal;
+line-height: normal;
+padding: 7% 10%;
+}
+#side-links img{
+    padding: 15% 10%;
+    width: 10px;
+}
 .logo{
     display: flex;
     align-items: flex-start;
@@ -43,6 +72,7 @@
 #profile .cart{
     width: 20%;
     height: 20%;
+    position: relative;
 }
 #profile .avatar{
     width: 35%;
@@ -63,6 +93,87 @@
 }
 .burger-menu img{
     width: 80%;
+}
+.cart img{
+    cursor: pointer;;
+}
+.cart .cart-number{
+    border-radius: 100%;
+    text-align: center;
+    background: #da6201;
+    font-size: 8px;
+    padding: 5% 20%;
+    position: absolute;
+    top: -20%;
+    right: -2%;
+    font-family:  'Kumbh Sans', sans-serif;
+    color: white;
+}
+.cart-items{
+    position: fixed;
+    height: 25%;
+    width: 250px;
+    z-index: 999;
+    background:#fff;
+    backdrop-filter: -10px 0 10px white;
+    display: flex;
+    font-family:  'Kumbh Sans', sans-serif;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    top: 12%;
+    right: 9%;
+    padding: 2% ;
+    gap: 10%;
+    border-radius: 10px;
+    box-shadow: 0 12px 10px rgba(0, 0, 0, 0.2);
+}
+.cart-items .item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
+    height: 30%;
+}
+.cart-items .item p{
+    font-size: clamp(12px , 1vw, 30px);
+    flex:80%;
+    height: 100%;
+    color:gray;
+}
+.cart-items .item .product-Image{
+    width: 40%;
+    height: 100%;
+    flex:20%;
+    border-radius: 5px;
+
+}
+.cart-items .item .delete-icon{
+    width: 20%;
+    height: 40%;
+    flex:5%;
+    cursor: pointer;
+
+}
+.cart-items button{
+    width: 100%;
+    padding: 5%;
+    background-color: hsl(26, 100%, 55%);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.cart-items p b{
+    color: black;
+    font-size: 15px;
 }
 @media only screen  and (max-width: 426px){
     #links{
@@ -85,5 +196,12 @@
         width: 22%;
         height: 28%;
         border: 2px solid #da630100;
+    }
+    .cart-items{
+        height: 35%;
+        padding: 5%;
+        width: 80%;
+        right: 5%;
+        gap: 8%;
     }
 }
