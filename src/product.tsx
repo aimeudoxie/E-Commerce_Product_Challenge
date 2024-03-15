@@ -10,7 +10,8 @@ import closemodal from './assets/closemodal.png';
 
 const Product: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string>(image1); // Set image1 as the initial selected image
+  const [selectedImage, setSelectedImage] = useState<string>(image1); 
+  const [selectedModalImage, setSelectedModalImage] = useState<string>(selectedImage); 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const imageUrls = [image1, image2, image3, image4];
@@ -19,6 +20,11 @@ const Product: React.FC = () => {
     setSelectedImage(imageUrl);
     setCurrentIndex(index);
   };
+  const handleModalImageClick = (imageUrl: string, index: number) => {
+    setSelectedModalImage(imageUrl);
+    setCurrentIndex(index);
+  };
+  
 
   const openModal = (imageUrl: string) => {
     setSelectedImage(imageUrl);
@@ -38,6 +44,18 @@ const Product: React.FC = () => {
   const prevImage = () => {
     const prevIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
     setSelectedImage(imageUrls[prevIndex]);
+    setCurrentIndex(prevIndex);
+  };
+  
+  const nextModalImage = () => {
+    const nextIndex = (currentIndex + 1) % imageUrls.length;
+    setSelectedModalImage(imageUrls[nextIndex]);
+    setCurrentIndex(nextIndex);
+  };
+
+  const prevModalImage = () => {
+    const prevIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+    setSelectedModalImage(imageUrls[prevIndex]);
     setCurrentIndex(prevIndex);
   };
 
@@ -66,18 +84,18 @@ const Product: React.FC = () => {
             <div className="close">
               <img src={closemodal} alt="" onClick={closeModal} />
             </div>
-            <img src={selectedImage} alt="Selected" className="modal-main-image" />
-            <div className="modal-right-arrow" onClick={nextImage}><img src={next} alt="" /></div>
-          <div className="modal-left-arrow" onClick={prevImage}><img src={previous} alt="" /></div>
+            <img src={selectedModalImage} alt="Selected" className="modal-main-image" />
+            <div className="modal-right-arrow" onClick={nextModalImage}><img src={next} alt="" /></div>
+          <div className="modal-left-arrow" onClick={prevModalImage}><img src={previous} alt="" /></div>
             <div className="alt-images-modal">
               {imageUrls.map((imageUrl, index) => (
                 <div
                   key={index}
-                  className={`thumbnail-container ${selectedImage === imageUrl ? 'selected-thumbnail' : ''}`}
-                  onClick={() => handleImageClick(imageUrl, index)}
+                  className={`thumbnail-container ${selectedModalImage === imageUrl ? 'selected-thumbnail' : ''}`}
+                  onClick={() => handleModalImageClick(imageUrl, index)}
                 >
                   <img src={imageUrl} alt={`Image ${index + 1}`} />
-                  {selectedImage === imageUrl && <div className="overlay"></div>}
+                  {selectedModalImage === imageUrl && <div className="overlay"></div>}
                 </div>
               ))}
             </div>
