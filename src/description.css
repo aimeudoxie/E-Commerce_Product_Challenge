@@ -15,7 +15,7 @@
     font-size: 15px;
     line-height: 2;
     padding: 0;
-}
+} 
 #description p{
 color: rgb(97, 96, 96);
 }
@@ -44,7 +44,7 @@ p b{
     flex: 50%;
     background-color: hsl(26, 100%, 55%);
     text-align: center;
-    font-size: 15px;
+    font-size: clamp(10px , 1vw, 20px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,6 +56,7 @@ p b{
     cursor: pointer;
 }
 #button img{
+    width: 15%;
     color: #fff;
     padding: 0% 5%;
 }
