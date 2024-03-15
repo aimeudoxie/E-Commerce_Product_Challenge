@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import "./navigation.css";
 import logo from "./assets/logo.svg";
 import cart from "./assets/icon-cart.svg";

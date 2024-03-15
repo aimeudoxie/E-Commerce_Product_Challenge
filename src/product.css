@@ -20,7 +20,7 @@
 }
 #alt-images{
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 width: 100%;
 }
 #alt-images img{
@@ -29,16 +29,14 @@ width: 100%;
     border-radius: 5%;
 }
 #alt-images img:hover{
-    background-color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
+  cursor: pointer;
 }
-
 .thumbnail-container {
     position: relative;
     width: 100%;
     margin: 3%;
   }
-  
+ 
   .thumbnail-container.selected-thumbnail .overlay {
     display: block;
   }
@@ -59,7 +57,97 @@ width: 100%;
     display: none;
     
   }
- 
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
+    height: 90%;
+    gap: 5%;
+  }
+  .modal-main-image{
+    width: 100%;
+    height: 65%;
+    border-radius: 5px;
+  }
+  .alt-images-modal {
+    display: flex;
+justify-content: space-around;
+width: 100%;
+  }
+  
+  .alt-images-modal img {
+    width: 100%;
+    height: 80px;
+    border-radius: 5%;
+  }
+  
+  .alt-images-modal img:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+  }
+  .close{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    border: 1px #da6201;
+  }
+  .close img:hover{
+    cursor: pointer;
+  }
+  .modal-right-arrow{
+    display: flex;
+    justify-content: center;
+    top: 43%;
+    position: fixed;
+    align-items: center;
+    right: 34%;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 50%;
+  }
+  .modal-right-arrow:hover{
+    background-color: #da6201;
+    border-radius: 50%;
+
+  }
+  .modal-left-arrow{
+    display: flex;
+    justify-content: center;
+    top: 43%;
+    left: 34%;
+    position: fixed;
+    align-items: center;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .modal-left-arrow:hover{
+    background-color: #da6201;
+    border-radius: 50%;
+
+  }
+  .arrow-right-arrow{
+    display: none;
+  }
+  .arrow-left-arrow{
+    display: none;
+  }
+
   @media only screen  and (max-width: 426px){
     #product-image{
         margin: 0;
@@ -73,8 +161,44 @@ width: 100%;
     }
     #main-image{
       height: 40%;
+      position: relative;
     }
     #alt-images{
+      display: none;
+    }
+    .arrow-right-arrow{
+      display: flex;
+      justify-content: center;
+      top: 40%;
+      position: absolute;
+      align-items: center;
+      right: 1%;
+      background-color: black;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .arrow-right-arrow:hover{
+      background-color: #da6201;
+      border-radius: 50%;
+  
+    }
+    .arrow-left-arrow{
+      display: flex;
+      justify-content: center;
+      top: 40%;
+      left: 1%;
+      position: absolute;
+      align-items: center;
+      background-color: black;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .arrow-left-arrow:hover{
+      background-color: #da6201;
+      border-radius: 50%;
+  
+    }
+    .modal{
       display: none;
     }
   }

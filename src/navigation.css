@@ -3,7 +3,6 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(49, 49, 49, 0.133);
-    padding-bottom: 2%;
     width: 100%;    
 }
 #links{
@@ -14,6 +13,7 @@
     font-family:  'Kumbh Sans', sans-serif;
     font-size: 16px;
     flex: 75%;
+    height: 100%;
 }
 #side-links{
     position: fixed;
@@ -49,14 +49,18 @@ padding: 7% 10%;
     align-items: flex-start;
     justify-content: flex-start;
     flex:15%;
+    padding-bottom: 2%;
 }
+
 #links  a{
     text-decoration: none; 
     color: rgb(97, 96, 96);
+    padding-bottom: 2.5%;
 }
 #links a:hover{
     color:black;
-    border-bottom: 2px solid #da6201;
+    border-bottom: 3px solid #da6201;
+
     
 }
 #links img{
