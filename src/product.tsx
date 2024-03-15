@@ -24,7 +24,6 @@ const Product: React.FC = () => {
     setSelectedModalImage(imageUrl);
     setCurrentIndex(index);
   };
-  
 
   const openModal = (imageUrl: string) => {
     setSelectedImage(imageUrl);

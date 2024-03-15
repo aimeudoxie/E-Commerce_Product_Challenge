@@ -3,7 +3,8 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(49, 49, 49, 0.133);
-    width: 100%;    
+    width: 100%; 
+    gap: 2%;   
 }
 #links{
     display: flex;
@@ -11,7 +12,7 @@
     justify-content: flex-start;
     gap: 3%;
     font-family:  'Kumbh Sans', sans-serif;
-    font-size: 16px;
+    font-size: clamp(10px , 1vw, 20px);
     flex: 75%;
     height: 100%;
 }
@@ -51,6 +52,9 @@ padding: 7% 10%;
     flex:15%;
     padding-bottom: 2%;
 }
+.logo img{
+    width: 100%;
+}
 
 #links  a{
     text-decoration: none; 
@@ -77,6 +81,9 @@ padding: 7% 10%;
     width: 20%;
     height: 20%;
     position: relative;
+}
+#profile .cart img{
+width: 100%;
 }
 #profile .avatar{
     width: 35%;
