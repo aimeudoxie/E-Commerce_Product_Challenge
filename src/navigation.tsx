@@ -1,24 +1,39 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import "./navigation.css";
 import logo from "./assets/logo.svg";
 import cart from "./assets/icon-cart.svg";
 import avatar from "./assets/image-avatar.png";
 import menu from './assets/icon-menu.svg';
 import close from './assets/close.png';
-import image1 from './assets/image-product-1.jpg';
 import remove from './assets/delete.png';
 
 const Navigation = () => {
     const [showSideLinks, setShowSideLinks] = useState(false);
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+        const storedItems = localStorage.getItem('item');
+        if (storedItems) {
+            setCartItems(JSON.parse(storedItems));
+        }
+    }, []);
 
     const toggleSideLinks = () => {
         setShowSideLinks(!showSideLinks);
     };
-    const[ShowCart,setShowCart]=useState(false);
 
-    const toggleCart =() =>{
+    const [ShowCart, setShowCart] = useState(false);
+
+    const toggleCart = () => {
         setShowCart(!ShowCart);
     };
+
+    const deleteItem = (index) => {
+        const newCartItems = [...cartItems];
+        newCartItems.splice(index, 1);
+        setCartItems(newCartItems);
+        localStorage.setItem('item', JSON.stringify(newCartItems));
+    }
 
     return (
         <>
@@ -43,19 +58,27 @@ const Navigation = () => {
                     <a href="#">Contact</a>
                 </div>
                 <div id="profile">
-                    <div className="cart"> <img src={cart} onClick={toggleCart}/>
-                    <span className='cart-number'>3</span></div>
+                    <div className="cart"> <img src={cart} onClick={toggleCart} />
+                    {cartItems.length > 0 && <span className='cart-number'>{cartItems.length}</span>}</div>
                     <img src={avatar} className="avatar" />
                 </div>
                 <div className="cart-items" style={{ display: ShowCart ? 'flex' : 'none' }} >
                     <h4>Cart</h4>
-                    <div className="item">
-                        <img src={image1} className="product-Image" />
-                        <p>Fall Limited Sneakers <br/>$125*3 = <b>$375.00</b></p>
-                        <img src={remove} className="delete-icon" />
-                        </div>
-                        <button>Checkout</button>
-                    
+                    {cartItems.length === 0 ? (
+                        <p>Your Cart is empty</p>
+                    ) : (
+                        <>
+                            {cartItems.map((item, index) => (
+                                <div className="item" key={index}>
+                                    <img src={item.image} className="product-Image" />
+                                    <p>{item.title} <br />${item.price}*{item.nbr} = <b>${item.totalPrice.toFixed(2)}</b></p>
+                                    <img src={remove} className="delete-icon" onClick={() => deleteItem(index)} />
+
+                                </div>
+                            ))}
+                            <button>Checkout</button>
+                        </>
+                    )}
                 </div>
             </div>
         </>
