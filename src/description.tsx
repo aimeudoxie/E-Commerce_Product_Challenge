@@ -23,8 +23,7 @@ const Description = () => {
 
     const addItem = () => {
         const storedItem = localStorage.getItem("item");
-        const item = storedItem ? JSON.parse(storedItem) : []; // Parse JSON directly
-    
+        const item = storedItem ? JSON.parse(storedItem) : []; 
         console.log("Item from localStorage:", item);
     
         item.push({
