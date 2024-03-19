@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![]("D:\ATLP\E-Commerce_Product_Challenge\E-Commerce_Product_Challenge\E-Commerce_Product_Challenge\src\assets\Screenshoot.png")
+"D:\ATLP\E-Commerce_Product_Challenge\E-Commerce_Product_Challenge\E-Commerce_Product_Challenge\src\assets\Screenshoot.png"
 
 
 ### Links
