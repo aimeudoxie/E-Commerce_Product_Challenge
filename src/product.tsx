@@ -25,8 +25,8 @@ const Product: React.FC = () => {
     setCurrentIndex(index);
   };
 
-  const openModal = (imageUrl: string) => {
-    setSelectedImage(imageUrl);
+  const openModal = (selectedModalImage: string) => {
+    setSelectedImage(selectedModalImage);
     setIsModalOpen(true);
   };
 
@@ -71,6 +71,7 @@ const Product: React.FC = () => {
             <div key={index} className={`thumbnail-container ${selectedImage === imageUrl ? 'selected-thumbnail' : ''}`} onClick={() => handleImageClick(imageUrl, index)}
             >
               <img src={imageUrl} alt={`Image ${index + 1}`} />
+              <div className="overImage"></div>
               {selectedImage === imageUrl && <div className="overlay"></div>}
             </div>
           ))}
@@ -94,6 +95,7 @@ const Product: React.FC = () => {
                   onClick={() => handleModalImageClick(imageUrl, index)}
                 >
                   <img src={imageUrl} alt={`Image ${index + 1}`} />
+                  <div className="overImage"></div>
                   {selectedModalImage === imageUrl && <div className="overlay"></div>}
                 </div>
               ))}
