@@ -66,13 +66,13 @@ p b{
     flex: 40%;
     align-items: center;
 }
-.minus{
-    width: 12px;
+.minus img{
+    width: 14px;
     height: 4px;
 }
 .plus{
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 13px;
 }
 .prices .line-through{
     text-decoration: line-through;
