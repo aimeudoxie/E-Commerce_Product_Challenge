@@ -7,9 +7,17 @@ import menu from './assets/icon-menu.svg';
 import close from './assets/close.png';
 import remove from './assets/delete.png';
 
+interface CartItem {
+    image: string;
+    title: string;
+    price: number;
+    nbr: number;
+    totalPrice: number;
+}
+
 const Navigation = () => {
     const [showSideLinks, setShowSideLinks] = useState(false);
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
     useEffect(() => {
         const storedItems = localStorage.getItem('item');
@@ -28,7 +36,7 @@ const Navigation = () => {
         setShowCart(!ShowCart);
     };
 
-    const deleteItem = (index) => {
+    const deleteItem = (index: number) => {
         const newCartItems = [...cartItems];
         newCartItems.splice(index, 1);
         setCartItems(newCartItems);
@@ -58,14 +66,16 @@ const Navigation = () => {
                     <a href="#">Contact</a>
                 </div>
                 <div id="profile">
-                    <div className="cart"> <img src={cart} onClick={toggleCart} />
-                    {cartItems.length > 0 && <span className='cart-number'>{cartItems.length}</span>}</div>
+                    <div className="cart"> 
+                        <img src={cart} onClick={toggleCart}/>
+                        {cartItems.length > 0 && <span className='cart-number'>{cartItems.length}</span>}
+                    </div>
                     <img src={avatar} className="avatar" />
                 </div>
                 <div className="cart-items" style={{ display: ShowCart ? 'flex' : 'none' }} >
                     <h4>Cart</h4>
                     {cartItems.length === 0 ? (
-                        <p>Your Cart is empty</p>
+                        <p>No items in cart</p>
                     ) : (
                         <>
                             {cartItems.map((item, index) => (
