@@ -6,7 +6,6 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
@@ -25,11 +24,6 @@ Users should be able to:
 - Switch the large product image by clicking on the small thumbnail images
 - Add items to the cart
 - View the cart and remove items from it
-
-### Screenshot
-
-"D:\ATLP\E-Commerce_Product_Challenge\E-Commerce_Product_Challenge\E-Commerce_Product_Challenge\src\assets\Screenshoot.png"
-
 
 ### Links
 
